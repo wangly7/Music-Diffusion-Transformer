@@ -1,24 +1,45 @@
-# MuDit
+# Music Transformer for Symbolic Music Generation
 
-MuDit is a Transformer- and diffusion-based text-to-music generation framework for synthesizing high-quality audio from natural language prompts. The pipeline encodes semantic text representations using pretrained Transformer encoders, conditions a diffusion model to generate mel spectrograms through iterative denoising, and reconstructs realistic waveforms using a HiFi-GAN neural vocoder.
+A PyTorch implementation of a Transformer-based model for symbolic music generation using the JSB Chorales dataset.
 
-## Architecture
+## Highlights
 
-Text Prompt  
-→ Transformer Text Encoder (BERT / T5 / CLAP)  
-→ Conditional Diffusion Model (U-Net / DiT)  
-→ Mel-Spectrogram Generation  
-→ HiFi-GAN Vocoder  
-→ Audio Waveform
+- Transformer decoder for autoregressive music generation
+- Trained on the JSB Chorales dataset
+- MIDI tokenization and sequence modeling
+- Generates symbolic music in MIDI format
 
-## Features
+## Model
 
-- Text-conditioned music generation
-- Transformer-based semantic prompt encoding
-- Diffusion-driven mel-spectrogram synthesis
-- High-fidelity neural vocoding with HiFi-GAN
-- Modular PyTorch training and inference pipeline
+- Framework: PyTorch
+- Architecture: Transformer Decoder
+- Dataset: JSB Chorales
+- Loss: Cross Entropy
+- Optimizer: AdamW
 
-## Goal
+## Results
 
-This project explores efficient and controllable music generation by modeling mel spectrograms with conditional diffusion instead of directly generating raw waveforms.
+The model learns harmonic and temporal dependencies in four-part chorales and generates coherent symbolic music sequences.
+
+## Run
+
+```bash
+pip install -r requirements.txt
+
+jupyter notebook "JSB Chorales.ipynb"
+```
+
+## Repository
+
+```
+├── JSB Chorales.ipynb
+├── checkpoints/
+├── generated/
+└── README.md
+```
+
+## References
+
+- Attention Is All You Need
+- Music Transformer
+- JSB Chorales Dataset
